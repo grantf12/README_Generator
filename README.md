@@ -1,8 +1,1 @@
-{
-	"Project Title: ": "g",
-	"Project Description: ": "f",
-	"Installation:": "d",
-	"Usage Info": "s",
-	"Contribution Guidelines: ": "a",
-	"Test Instructions: ": ""
-}
+"\n  # undefined\n  \n  ## Description:\n    R\n\n  ## Table of Contents:\n    * [Installation](#insallation)\n  \n  ## Installation\n"
