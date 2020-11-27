@@ -7,9 +7,32 @@ function generateMarkdown(response) {
     ${response.description}
 
   ## Table of Contents:
-    * [Installation](#insallation)
+
+  * [Installation](#Installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
   
-  ## Installation
+  ## Installation:
+    ${response.installation}
+
+  ## Usage:
+    ${response.usage}
+
+  ## License:
+    ${response.license}
+
+  ## Contributing:
+    ${response.contributing}
+
+  ## Tests:
+    ${response.tests}
+
+  ## Questions:
+    ${response.tests}
+
 `;
 }
 

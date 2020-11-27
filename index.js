@@ -1,13 +1,14 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("../README_Generator/utils/generateMarkdown");
+const Choices = require("inquirer/lib/objects/choices");
 
 // array of questions for user
 const questions = [
   {
     type: "input",
     message: "Enter the Project Name: ",
-    name: "title: ",
+    name: "title",
   },
   {
     type: "input",
@@ -22,23 +23,29 @@ const questions = [
   {
     type: "input",
     message: "Enter the usage information: ",
-    name: "usageInfo",
+    name: "usage",
   },
   {
     type: "input",
     message: "Enter contribution guidelines: ",
-    name: "contribGuide",
+    name: "contributing",
   },
   {
     type: "input",
     message: "Enter test instructions: ",
-    name: "Test Instructions",
+    name: "tests",
+  },
+  {
+      type: "checkbox",
+      message: 'What license(s) would you like to use?',
+      name: 'license',
+      choices: ['MIT', '']
   },
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, JSON.stringify(data), (err) =>
+  fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log("Success!")
   );
 }
