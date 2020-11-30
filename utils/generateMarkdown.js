@@ -2,6 +2,7 @@
 function generateMarkdown(response) {
   return `
   # ${response.title}
+  ![badge](https://img.shields.io/badge/license-${response.license}-green)
   
   ## Description:
     ${response.description}
@@ -22,7 +23,7 @@ function generateMarkdown(response) {
     ${response.usage}
 
   ## License:
-    ${response.license}
+    This project is protected under ${response.license} licensing.
 
   ## Contributing:
     ${response.contributing}
@@ -31,7 +32,8 @@ function generateMarkdown(response) {
     ${response.tests}
 
   ## Questions:
-    ${response.tests}
+  If you have any questions please feel free to contact me through [my Gihub](https://github.com/${response.gitHub}) or [Email](${response.email})
+
 
 `;
 }

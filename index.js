@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("../README_Generator/utils/generateMarkdown");
-const Choices = require("inquirer/lib/objects/choices");
+// const choices = require("inquirer/lib/objects/choices");
+
 
 // array of questions for user
 const questions = [
@@ -36,11 +37,21 @@ const questions = [
     name: "tests",
   },
   {
-      type: "checkbox",
+      type: "list",
       message: 'What license(s) would you like to use?',
       name: 'license',
-      choices: ['MIT', '']
+      choices: ['MIT', 'Apache_2.0', 'General_Public_License_v3.0', 'ISC']
   },
+  {
+      type: 'input',
+      message: 'Please input your GitHub Account.',
+      name: 'gitHub'
+  },
+  {
+      type: 'input',
+      message: 'Please input your email for contact.',
+      name: 'email'
+  }
 ];
 
 // function to write README file
@@ -52,7 +63,8 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-  inquirer.prompt(questions).then((response) => {
+  inquirer.prompt(questions).then((response) =>
+  {
         // Send the Response through the generateMarkdown function to create formatting for README
     let markdown = generateMarkdown(response);
         // Send the formatted response to the README file that will be created
