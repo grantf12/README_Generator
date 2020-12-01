@@ -32,7 +32,7 @@ function generateMarkdown(response) {
     ${response.tests}
 
   ## Questions:
-  If you have any questions please feel free to contact me through [my Gihub](https://github.com/${response.gitHub}) or [Email](${response.email})
+  If you have any questions please feel free to contact me through [GitHub](https://github.com/${response.gitHub}) or [Email](${response.email})
 
 
 `;
